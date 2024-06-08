@@ -10,6 +10,10 @@ const Money = () => {
     const [info, setInfo] = useState()
 
     const navigate=useNavigate()
+
+    const handleButton=()=>{
+        navigate("/tracker")
+    }
     const handleMoneyTracker = async (e) => {
         e.preventDefault()
         try {
@@ -50,6 +54,7 @@ const Money = () => {
                 <input type='text' placeholder='Enter a Info' className='m-3 w-full' value={info} onChange={(e) => setInfo(e.target.value)} />
                 <button type='submit' className='m-3 w-full bg-cyan-600 text-3xl font-bold border-2 border-solid border-blue-950 rounded-lg'>Submit</button>
             </form>
+            <button onClick={handleButton} className='flex mx-auto  px-auto text-center m-10 font-bold text-3xl bg-green-400 border-2 border-violet-500 rounded-lg text-green-50 ' >Go to Tracker</button>
         </>
     )
 }
